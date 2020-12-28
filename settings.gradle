@@ -1,0 +1,10 @@
+include ':view'
+include ':main'
+include ':app'
+//include ':my'
+include ':login'
+//include ':music'
+//include ':video'
+//include ':news'
+include ':common'
+rootProject.name = "Hodgepodge"

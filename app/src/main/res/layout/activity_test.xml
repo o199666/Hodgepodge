@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+    </data>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="协程页面"
+                android:textSize="20sp"
+               />
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/start_cor"
+                android:text="启动协程"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/doun_cor"
+                android:text="协程下载图片"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/doun_cor1"
+                android:text="协程下载图片1"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/doun_cor2"
+                android:text="把图片切成多份"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/doun_cor5"
+                android:text="请求加载对话框"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+
+            <ImageView
+                android:id="@+id/iv6"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+</layout>

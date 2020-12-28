@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RowLayoutView">
+        <!-- 左边文字内容-->
+        <attr name="text" format="string" />
+        <!-- 左边文字颜色-->
+        <attr name="textColor" format="color" />
+        <!-- 左边文字大小-->
+        <attr name="textSize" format="dimension" />
+        <!-- 右边文字内容-->
+        <attr name="rightText" format="string" />
+        <!-- 右边文字颜色-->
+        <attr name="rightTvColor" format="color" />
+        <!-- 右边文字大小-->
+        <attr name="rightTvSize" format="dimension" />
+        <!-- 左边图标-->
+        <attr name="leftDrawable" format="reference|integer" />
+        <!-- 右边图标-->
+        <attr name="rightDrawable" format="reference|integer" />
+        <!--主文字距离左边的间距-->
+        <attr name="leftTextSpacing" format="dimension" />
+        <!--右边文字距离右边的间距-->
+        <attr name="rightTextSpacing" format="dimension" />
+    </declare-styleable>
+
+
+</resources>

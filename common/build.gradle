@@ -1,0 +1,101 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+//声明变量
+def config = rootProject.ext
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api 'androidx.core:core-ktx:1.3.1'
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.constraintlayout:constraintlayout:2.0.1'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // ViewModel
+    api "androidx.lifecycle:lifecycle-viewmodel:" + config.lifecycle_version
+    // LiveData
+    api "androidx.lifecycle:lifecycle-livedata:" + config.lifecycle_version
+    // Lifecycles only (without ViewModel or LiveData)
+    api "androidx.lifecycle:lifecycle-runtime:" + config.lifecycle_version
+    //navigation+Fragment
+    api 'androidx.lifecycle:lifecycle-extensions:' + config.lifecycle_version
+    api 'androidx.navigation:navigation-fragment:' + config.navigation_ver
+    api 'androidx.navigation:navigation-ui:' + config.navigation_ver
+    api 'androidx.navigation:navigation-fragment-ktx:' + config.navigation_ver
+    api 'androidx.navigation:navigation-ui-ktx:' + config.navigation_ver
+    //矢量图支持
+    api 'androidx.vectordrawable:vectordrawable:' + config.vectordrawable_ver
+    //阿里路由
+    api 'com.alibaba:arouter-api:' + config.arouter_api_ver
+    //网络请求
+    api 'com.squareup.retrofit2:converter-gson:' + config.retrofit_ver
+    api 'com.squareup.retrofit2:retrofit:' + config.retrofit_ver
+    api 'com.squareup.okhttp3:okhttp:' + config.okhttp3_ver
+    api 'com.squareup.okhttp3:logging-interceptor:' + config.okhttp3_ver
+    api 'com.squareup.retrofit2:converter-scalars:' + config.retrofit_ver
+    //权限处理
+//    api 'com.mylhyl:acp:' + config.acp_ver
+    api 'com.hjq:xxpermissions:'+config.xxpermissions_ver
+    //logger
+    api 'com.orhanobut:logger:' + config.log_ver
+    //方法数超过65k
+    // https://mvnrepository.com/artifact/androidx.multidex/multidex
+    api group: 'androidx.multidex', name: 'multidex', version: config.multidex_ver
+    //协程
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
+    api group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: config.coroutines_ver
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:"+config.coroutines_ver
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-android
+    //万能适配器
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:'+config.adapter_helper
+    //banner
+    api 'com.youth.banner:banner:'+config.banner_ver
+    //图片处理
+//    api("io.coil-kt:coil:"+config.coil_ver)
+//    api("io.coil-kt:coil-gif:"+config.coil_ver)
+//    api("io.coil-kt:coil-svg:"+config.coil_ver)
+    //viewpage2
+    api "androidx.viewpager2:viewpager2:"+config.viewpage2_ver
+
+    //刷新框架
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    //Meter风格的 各种弹框
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    //
+    implementation "com.airbnb.android:lottie:3.5.0"
+}

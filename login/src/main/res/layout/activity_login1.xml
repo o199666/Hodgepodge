@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="登录"
+            android:textSize="16dp"
+            android:visibility="gone" />
+
+        <com.cwj.oftenview.layout.RowLayoutView
+            android:id="@+id/rlv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#F69191"
+            app:leftDrawable="@drawable/ic_test"
+            app:leftTextSpacing="10dp"
+            app:rightDrawable="@drawable/ic_right"
+            app:rightText="新动态"
+            app:rightTextSpacing="1dp"
+            app:rightTvSize="12dp"
+            app:text="登录"
+            app:textSize="16dp" />
+
+
+        <com.cwj.oftenview.view.SlideScoreView
+            android:id="@+id/slide_view"
+            android:layout_width="200dp"
+            android:layout_height="90dp" />
+
+
+    </LinearLayout>
+
+</layout>
+

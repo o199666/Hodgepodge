@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LuancherActivity">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="我是启动页面，" />
+        <Button
+            android:id="@+id/ziview"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="跳转到自定view，" />
+
+        <Button
+            android:id="@+id/start_luancher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到首页1" />
+        <Button
+            android:id="@+id/start_luancher1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到首页2" />
+        <Button
+            android:id="@+id/start_luancher2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到首页3" />
+        <Button
+            android:id="@+id/start_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到登录" />
+
+        <Button
+            android:id="@+id/start_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到本组件的页面" />
+    </LinearLayout>
+</layout>

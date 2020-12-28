@@ -1,0 +1,45 @@
+/*在根目录中配置公用供子模块调用*/
+ext {
+    //Android
+    compileSdkVersion = 30
+    buildToolsVersion = "30.0.2"
+    minSdkVersion = 16
+    targetSdkVersion = 30 // 版本号
+    applicationId = "com.pd.hodgepodge" //包名
+    versionCode = 1
+    versionName = "1.0"
+    //Version
+    kotlin_version = "1.4.0"
+    // 每次更改“isModule”的值后，需要点击 "Sync Project" 按钮
+    isModule=false
+    //阿里路由
+    arouter_api_ver = "1.4.0"
+    arouter_compiler_ver = "1.2.1"
+    //viewmodel livedata
+    lifecycle_version = "2.2.0"
+    //navigation
+    navigation_ver="2.3.0"
+    //矢量图
+    vectordrawable_ver="1.1.0"
+    //网络请求
+    retrofit_ver = "2.6.1"
+    okhttp3_ver = "3.12.1"
+    //权限处理
+//    acp_ver="1.2.0"
+    xxpermissions_ver="8.8"
+    //logger
+    log_ver="2.2.0"
+    //方法数
+    multidex_ver="2.0.1"
+    //协程
+    coroutines_ver="1.4.0-M1"
+    //图片
+    coil_ver="1.0.0-rc3"
+    //适配器
+    adapter_helper="3.0.4"
+    //viewpage2
+    viewpage2_ver="1.0.0"
+    //banner
+    banner_ver="2.1.0"
+
+}
