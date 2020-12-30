@@ -9,7 +9,7 @@ android {
     buildToolsVersion config.buildToolsVersion
     defaultConfig {
         multiDexEnabled true
-        minSdkVersion config.minSdkVersion
+        minSdkVersion  config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode 1
         versionName "1.0"

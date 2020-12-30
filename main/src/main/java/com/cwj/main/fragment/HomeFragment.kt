@@ -1,14 +1,18 @@
 package com.cwj.main.fragment
 
 import android.util.Log
-import android.widget.LinearLayout
+import android.view.View
 import androidx.lifecycle.Observer
 import com.cwj.common.base.BaseFragment
 import com.cwj.common.base.BaseViewModel
-import com.cwj.common.view.BaseLoadView
+import com.cwj.common.utils.ToastUtil
+import com.cwj.oftenview.view.baseload.BaseLoadView
 import com.cwj.main.R
 import com.cwj.main.databinding.HomeFragmentBinding
 import com.cwj.main.vm.HomeViewModel
+import com.cwj.oftenview.view.baseload.LoadState
+import com.cwj.oftenview.view.baseload.onBtnClick
+import kotlinx.coroutines.GlobalScope
 
 
 /**
@@ -23,26 +27,40 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
         Log.e("lazyLoadDate:Home", "111")
     }
 
-    fun newInstance(): HomeFragment? {
-        return HomeFragment()
-    }
     override fun initVD() {
         vm.queryNewType(true)
         vm.resultData.observe(this, Observer {
-            bd!!.dataTv.text = it.get(0).news_type_name
+            bd.dataTv.text = it[0].news_type_name
         })
-        val linearParams = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
 
-        var loadView= context?.let { BaseLoadView(it,null,0) }
-        loadView!!.setWidthHeight(loadView, LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT)
-
+        //动态添加加载框，
+        var loadView =
+            BaseLoadView(this.requireContext())
+//        loadView.setStete(LoadState.LOADING)
         bd.cl.addView(loadView)
 
-    }
 
+        loadView.setOnBtnClick(object : onBtnClick {
+            override fun onClick(view: View, loadState: LoadState) {
+                //根据不同的状态，操作
+                when(loadState){
+                    LoadState.ERROR->{
+
+                    }
+                    LoadState.EMPTY->{
+
+                    }
+                    LoadState.NOLOGIN->{
+
+                    }
+                }
+            }
+
+        })
+
+
+//        loadView.dismiss(loadView)
+    }
 
 
     override val layoutId: Int

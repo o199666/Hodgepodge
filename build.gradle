@@ -21,11 +21,7 @@ buildscript {
     }
 }
 
-ext {
-    defaultVersionCode = compileSdkVersion
-    defaultVersionName = defaultVersionCode
-    defaultMinSdkVersion = minSdkVersion
-}
+
 
 allprojects {
     repositories {

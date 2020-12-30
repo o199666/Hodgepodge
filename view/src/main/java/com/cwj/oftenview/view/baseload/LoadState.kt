@@ -1,4 +1,4 @@
-package com.cwj.common.view
+package com.cwj.oftenview.view.baseload
 
 /**
  *  author : ChenWenJie

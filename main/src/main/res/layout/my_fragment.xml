@@ -14,9 +14,9 @@
         android:text="My"
         android:textSize="28dp"
         />
-    <com.cwj.common.view.BaseLoadView
+    <com.cwj.oftenview.view.baseload.BaseLoadView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        ></com.cwj.common.view.BaseLoadView>
+        ></com.cwj.oftenview.view.baseload.BaseLoadView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
