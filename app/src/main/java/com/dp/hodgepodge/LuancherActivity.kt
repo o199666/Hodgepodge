@@ -13,7 +13,10 @@ import com.dp.hodgepodge.databinding.ActivityLuancherBinding
  * 启动页面。
  */
 @Route(path = APath.APP.LUNCHER)
-class LuancherActivity(override val layoutId: Int=R.layout.activity_luancher, override val viewModel: BaseViewModel=LauncherViewModel()) : BaseActivity<ActivityLuancherBinding, LauncherViewModel>() {
+class LuancherActivity(
+    override val layoutId: Int=R.layout.activity_luancher,
+    override val viewModel: BaseViewModel=LauncherViewModel()) :
+    BaseActivity<ActivityLuancherBinding, LauncherViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vm.queryNewType(true)

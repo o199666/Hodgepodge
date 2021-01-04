@@ -10,6 +10,7 @@ val apiservice by lazy {
     RetrofitUtils.INSTANCE.initRetrofit() }
 
 interface Apiservice {
+
     @GET("news/queryNewsType")
     suspend fun queryNewsType(): BaseBean<List<NewsType>>
 

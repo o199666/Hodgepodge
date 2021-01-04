@@ -42,6 +42,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
     // ViewModel
     api "androidx.lifecycle:lifecycle-viewmodel:" + config.lifecycle_version
     // LiveData
@@ -61,9 +62,10 @@ dependencies {
     //网络请求
     api 'com.squareup.retrofit2:converter-gson:' + config.retrofit_ver
     api 'com.squareup.retrofit2:retrofit:' + config.retrofit_ver
+    api 'com.squareup.retrofit2:converter-scalars:' + config.retrofit_ver
+
     api 'com.squareup.okhttp3:okhttp:' + config.okhttp3_ver
     api 'com.squareup.okhttp3:logging-interceptor:' + config.okhttp3_ver
-    api 'com.squareup.retrofit2:converter-scalars:' + config.retrofit_ver
     //权限处理
 //    api 'com.mylhyl:acp:' + config.acp_ver
     api 'com.hjq:xxpermissions:'+config.xxpermissions_ver

@@ -7,10 +7,7 @@ import com.cwj.common.bean.BaseBean
 import com.cwj.common.config.AppConfig
 import com.cwj.common.net.error.ErrorUtil
 import com.orhanobut.logger.Logger
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 
 /**
@@ -97,6 +94,43 @@ open class BaseViewModel : ViewModel(), ViewModelLifecycle {
     }
 
 
+//
+//    //需要并行的时候这样用 合并
+//    GlobalScope.launch(Dispatchers.Main) {
+//        val one = async { api.listReposKt("rengwuxian") }
+//        val two = async { api.listReposKt("google") }
+//        binding.tv.text = "${one.await()[0].name} -> ${two.await()[0].name}"
+//    }
+//    //其中一个作为另外一个参数
+//    GlobalScope.launch(Dispatchers.Main) {
+//        val one = api.listReposKt("rengwuxian")
+//        val two = api.listReposKt(one[0].name)
+////            binding.tv.text="${one.await()[0].name} -> ${two.await()[0].name}"
+//    }
+//
+//
+//    //
+//    var scope = MainScope()
+//    scope.launch(Dispatchers.Main) {
+//        val one = async { api.listReposKt("rengwuxian") }
+//        val two = async { api.listReposKt("google") }
+//        binding.tv.text = "${one.await()[0].name} -> ${two.await()[0].name}"
+//    }
+//    //避免内存泄露。 取消，结构化
+//    scope.cancel()
+//
+//
+//    lifecycleScope.launch(Dispatchers.Main) {
+//        val one = async { api.listReposKt("rengwuxian") }
+//        val two = async { api.listReposKt("google") }
+//        binding.tv.text = "${one.await()[0].name} -> ${two.await()[0].name}"
+//    }
+////在执行完created的时候 再执行。
+//    lifecycleScope.launchWhenCreated {
+//        val one = async { api.listReposKt("rengwuxian") }
+//        val two = async { api.listReposKt("google") }
+//        binding.tv.text = "${one.await()[0].name} -> ${two.await()[0].name}"
+//    }
 }
 
  

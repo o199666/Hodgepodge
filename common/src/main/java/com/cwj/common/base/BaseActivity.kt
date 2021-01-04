@@ -34,7 +34,6 @@ import org.greenrobot.eventbus.Subscribe
 abstract class BaseActivity<VD : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
     lateinit var bd: VD
     lateinit var vm: VM
-    private var dialog: MaterialDialog? = null
 
     /**
      * 设置每个页面的布局ID

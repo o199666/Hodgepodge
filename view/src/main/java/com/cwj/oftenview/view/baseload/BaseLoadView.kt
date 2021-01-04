@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.app.Application
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
@@ -22,21 +21,14 @@ import com.cwj.oftenview.R
  *  desc   : 网络加载loading
  */
 class BaseLoadView : LinearLayout {
-
-
     fun init(application: Application) {
-
     }
-
-
     fun setNetWorkImage(networkImage: Int) {
         this.networkImage = networkImage
     }
-
     fun setErrorImage(errorImage: Int) {
         this.errorImage = errorImage
     }
-
     fun setNotLoginImage(notLoginImage: Int = R.drawable.ic_load_not_login) {
         this.notLoginImage = notLoginImage
     }
@@ -46,7 +38,6 @@ class BaseLoadView : LinearLayout {
     }
 
     init {
-
         initView()
     }
 
@@ -98,8 +89,12 @@ class BaseLoadView : LinearLayout {
             LayoutParams.MATCH_PARENT,
             LayoutParams.MATCH_PARENT
         )
+        setStete(LoadState.LOADING)
+        setRotation(state_iv)
 
         view!!.layoutParams = linearParams
+
+
     }
 
     /**
@@ -181,6 +176,9 @@ class BaseLoadView : LinearLayout {
 
                 }
             }
+            else->{
+
+            }
 
 
         }
@@ -193,10 +191,10 @@ class BaseLoadView : LinearLayout {
         // 这里加个渐变，短暂的动画 消失。
         view.visibility = View.GONE
     }
-
+    var objectAnimator = ValueAnimator()
     var duration = 1000L
     fun setRotation(view: View?) {
-        val objectAnimator = ObjectAnimator.ofFloat(view, "rotation", 0f, 359f)
+         objectAnimator = ObjectAnimator.ofFloat(view, "rotation", 0f, 359f)
         objectAnimator.repeatCount = ValueAnimator.INFINITE
         objectAnimator.duration = duration
         objectAnimator.interpolator = LinearInterpolator()

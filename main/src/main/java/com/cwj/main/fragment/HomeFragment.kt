@@ -22,7 +22,6 @@ import kotlinx.coroutines.GlobalScope
  *  desc   :
  */
 class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
-
     override fun lazyLoadData() {
         Log.e("lazyLoadDate:Home", "111")
     }
@@ -37,7 +36,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
         var loadView =
             BaseLoadView(this.requireContext())
 //        loadView.setStete(LoadState.LOADING)
-        bd.cl.addView(loadView)
+             bd.cl.addView(loadView)
 
 
         loadView.setOnBtnClick(object : onBtnClick {
